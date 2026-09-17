@@ -14,9 +14,11 @@ export default function Galeria() {
         <div className="space-y-14">
           {galeria.map((proyecto) => (
             <div key={proyecto.id}>
-              <h3 className="font-semibold text-[1.02rem] mb-3">
-                {proyecto.titulo}
-              </h3>
+              {proyecto.titulo && (
+                <h3 className="font-semibold text-[1.02rem] mb-3">
+                  {proyecto.titulo}
+                </h3>
+              )}
               <BeforeAfterSlider
                 beforeSrc={proyecto.beforeSrc}
                 afterSrc={proyecto.afterSrc}
