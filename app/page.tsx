@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import SwatchRibbon from "@/components/SwatchRibbon";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PaintBloom from "@/components/PaintBloom";
+import Galeria from "@/components/Galeria";
 
 export default function HomePage() {
   return (
@@ -129,6 +130,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <Galeria />
 
       {/* Garantía */}
       <section className="pb-[70px]">

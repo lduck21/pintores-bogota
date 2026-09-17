@@ -14,6 +14,9 @@ export default function Header() {
           <Link href="/#proceso" className="hover:text-ink transition">
             Proceso
           </Link>
+          <Link href="/#galeria" className="hover:text-ink transition">
+            Galería
+          </Link>
           <Link href="/#contacto" className="hover:text-ink transition">
             Contacto
           </Link>
