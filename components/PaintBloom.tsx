@@ -1,13 +1,13 @@
 "use client";
 
 const dots = [
-  { color: "#3F4F3A", top: "10%", left: "18%", size: 130, delay: "0s", dur: "9s" },
-  { color: "#A9812E", top: "8%", left: "55%", size: 100, delay: "-1.5s", dur: "10s" },
-  { color: "#A9553F", top: "38%", left: "38%", size: 160, delay: "-3s", dur: "11s" },
-  { color: "#7A3B2E", top: "55%", left: "68%", size: 90, delay: "-4.5s", dur: "9.5s" },
-  { color: "#8FA487", top: "62%", left: "12%", size: 110, delay: "-2s", dur: "10.5s" },
-  { color: "#EFDDBA", top: "70%", left: "45%", size: 80, delay: "-6s", dur: "8.5s" },
-  { color: "#A9812E", top: "28%", left: "78%", size: 70, delay: "-5s", dur: "9s" },
+  { color: "#3F4F3A", top: "10%", left: "18%", size: 130, delay: "0s", dur: "4.5s" },
+  { color: "#A9812E", top: "8%", left: "55%", size: 100, delay: "-0.8s", dur: "5s" },
+  { color: "#A9553F", top: "38%", left: "38%", size: 160, delay: "-1.5s", dur: "5.5s" },
+  { color: "#7A3B2E", top: "55%", left: "68%", size: 90, delay: "-2.2s", dur: "4.8s" },
+  { color: "#8FA487", top: "62%", left: "12%", size: 110, delay: "-1s", dur: "5.2s" },
+  { color: "#EFDDBA", top: "70%", left: "45%", size: 80, delay: "-3s", dur: "4.2s" },
+  { color: "#A9812E", top: "28%", left: "78%", size: 70, delay: "-2.5s", dur: "4.5s" },
 ];
 
 export default function PaintBloom() {
