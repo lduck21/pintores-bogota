@@ -1,65 +1,51 @@
 "use client";
 
+const dots = [
+  { color: "#3F4F3A", top: "10%", left: "18%", size: 130, delay: "0s", dur: "4.5s" },
+  { color: "#A9812E", top: "8%", left: "55%", size: 100, delay: "-0.8s", dur: "5s" },
+  { color: "#A9553F", top: "38%", left: "38%", size: 160, delay: "-1.5s", dur: "5.5s" },
+  { color: "#7A3B2E", top: "55%", left: "68%", size: 90, delay: "-2.2s", dur: "4.8s" },
+  { color: "#8FA487", top: "62%", left: "12%", size: 110, delay: "-1s", dur: "5.2s" },
+  { color: "#EFDDBA", top: "70%", left: "45%", size: 80, delay: "-3s", dur: "4.2s" },
+  { color: "#A9812E", top: "28%", left: "78%", size: 70, delay: "-2.5s", dur: "4.5s" },
+];
+
 export default function PaintBloom() {
   return (
     <div
-      className="absolute inset-0 overflow-hidden bg-[#211E1A] motion-reduce:!bg-[#EFEDE7]"
+      className="absolute inset-0 overflow-hidden motion-reduce:hidden"
       aria-hidden="true"
     >
       <style>{`
-        @keyframes marble-a {
-          0%   { transform: translate(-10%, -8%) rotate(0deg) scale(1); }
-          50%  { transform: translate(14%, 10%) rotate(180deg) scale(1.25); }
-          100% { transform: translate(-10%, -8%) rotate(360deg) scale(1); }
+        @keyframes paint-float {
+          0%   { transform: translate(0%, 0%) scale(1); }
+          50%  { transform: translate(6%, -7%) scale(1.06); }
+          100% { transform: translate(0%, 0%) scale(1); }
         }
-        @keyframes marble-b {
-          0%   { transform: translate(12%, 6%) rotate(0deg) scale(1.1); }
-          50%  { transform: translate(-14%, -12%) rotate(-180deg) scale(0.9); }
-          100% { transform: translate(12%, 6%) rotate(-360deg) scale(1.1); }
-        }
-        @keyframes marble-c {
-          0%   { transform: translate(-6%, 12%) rotate(0deg) scale(0.95); }
-          50%  { transform: translate(8%, -14%) rotate(-180deg) scale(1.2); }
-          100% { transform: translate(-6%, 12%) rotate(-360deg) scale(0.95); }
-        }
-        .marble-layer { mix-blend-mode: screen; position: absolute; inset: -20%; }
-        .marble-layer.a { animation: marble-a 22s ease-in-out infinite; }
-        .marble-layer.b { animation: marble-b 26s ease-in-out infinite; }
-        .marble-layer.c { animation: marble-c 19s ease-in-out infinite; }
-        @media (prefers-reduced-motion: reduce) {
-          .marble-layer { animation: none !important; opacity: 0; }
+        .paint-dot {
+          animation-name: paint-float;
+          animation-timing-function: ease-in-out;
+          animation-iteration-count: infinite;
         }
       `}</style>
-
-      <div
-        className="marble-layer a"
-        style={{
-          background:
-            "radial-gradient(circle at 30% 35%, #6FA562 0%, transparent 55%)",
-        }}
-      />
-      <div
-        className="marble-layer b"
-        style={{
-          background:
-            "radial-gradient(circle at 65% 60%, #E8B94A 0%, transparent 55%)",
-        }}
-      />
-      <div
-        className="marble-layer c"
-        style={{
-          background:
-            "radial-gradient(circle at 45% 75%, #C96A4E 0%, transparent 55%)",
-        }}
-      />
-      <div
-        className="marble-layer a"
-        style={{
-          animationDelay: "-9s",
-          background:
-            "radial-gradient(circle at 70% 20%, #8B6FA5 0%, transparent 50%)",
-        }}
-      />
+      {dots.map((d, i) => (
+        <span
+          key={i}
+          className="paint-dot absolute rounded-full"
+          style={{
+            backgroundColor: d.color,
+            top: d.top,
+            left: d.left,
+            width: d.size,
+            height: d.size,
+            boxShadow: "0 10px 24px rgba(32,31,27,0.12)",
+            animationDelay: d.delay,
+            animationDuration: d.dur,
+          }}
+        />
+      ))}
+      {/* Fallback estático para quienes prefieren menos movimiento */}
+      <div className="hidden motion-reduce:block absolute inset-0 bg-[#EFEDE7]" />
     </div>
   );
 }
