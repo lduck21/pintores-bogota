@@ -34,9 +34,6 @@ export default function HomePage() {
           </div>
 
           <div className="relative aspect-[4/5] rounded overflow-hidden shadow-[0_24px_50px_rgba(32,31,27,0.14)] bg-[linear-gradient(160deg,#E4E0D5_0%,#D7D2C4_55%,#C9C3B2_100%)]">
-            <span className="absolute top-4 right-4 text-[0.72rem] italic text-ink/55 bg-white/70 px-2.5 py-1 rounded-sm">
-              Espacio para fotografía real
-            </span>
             <div className="absolute bottom-6 left-6 right-6 flex gap-2.5">
               <div className="flex-1 h-[54px] rounded-sm shadow-[0_8px_18px_rgba(32,31,27,0.18)] bg-musgo" />
               <div className="flex-1 h-[54px] rounded-sm shadow-[0_8px_18px_rgba(32,31,27,0.18)] bg-laton" />

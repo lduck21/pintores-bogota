@@ -21,7 +21,7 @@ const siteUrl =
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Pintores Bogotá — Pintores a domicilio en tu localidad",
+    default: "Pintores Bogotá — Pintura residencial con garantía",
     template: "%s | Pintores Bogotá",
   },
   description:
