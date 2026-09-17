@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SwatchRibbon from "@/components/SwatchRibbon";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import PaintBloom from "@/components/PaintBloom";
 
 export default function HomePage() {
   return (
@@ -33,13 +33,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="relative aspect-[4/5] rounded overflow-hidden shadow-[0_24px_50px_rgba(32,31,27,0.14)] bg-[linear-gradient(160deg,#E4E0D5_0%,#D7D2C4_55%,#C9C3B2_100%)]">
-            <div className="absolute bottom-6 left-6 right-6 flex gap-2.5">
-              <div className="flex-1 h-[54px] rounded-sm shadow-[0_8px_18px_rgba(32,31,27,0.18)] bg-musgo" />
-              <div className="flex-1 h-[54px] rounded-sm shadow-[0_8px_18px_rgba(32,31,27,0.18)] bg-laton" />
-              <div className="flex-1 h-[54px] rounded-sm shadow-[0_8px_18px_rgba(32,31,27,0.18)] bg-terracota" />
-              <div className="flex-1 h-[54px] rounded-sm shadow-[0_8px_18px_rgba(32,31,27,0.18)] bg-[#8B8878]" />
-            </div>
+          <div className="relative aspect-[4/5] rounded overflow-hidden shadow-[0_24px_50px_rgba(32,31,27,0.14)] bg-[#EFEDE7]">
+            <PaintBloom />
           </div>
         </div>
       </section>
@@ -93,23 +88,6 @@ export default function HomePage() {
         </div>
       </section>
 
-
-      {/* Antes / Después */}
-      <section className="pb-[70px]">
-        <div className="max-w-[1160px] mx-auto px-7">
-          <h2 className="font-display font-medium text-[1.8rem] mb-3.5">
-            El resultado, de un vistazo
-          </h2>
-          <p className="text-inksoft max-w-[56ch] mb-10">
-            Desliza para comparar el antes y el después de un trabajo de
-            pintura.
-          </p>
-          <BeforeAfterSlider
-            beforeSrc="/images/antes.jpg"
-            afterSrc="/images/despues.jpg"
-          />
-        </div>
-      </section>
 
       {/* Proceso */}
       <section className="pb-[70px]" id="proceso">

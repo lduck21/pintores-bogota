@@ -27,9 +27,15 @@ const config: Config = {
           "0%, 100%": { backgroundColor: "#3F4F3A" },
           "50%": { backgroundColor: "#A9812E" },
         },
+        drift: {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "33%": { transform: "translate(6%, -8%) scale(1.12)" },
+          "66%": { transform: "translate(-5%, 6%) scale(0.94)" },
+        },
       },
       animation: {
         crossfade: "crossfade 12s ease-in-out infinite",
+        drift: "drift 16s ease-in-out infinite",
       },
     },
   },
