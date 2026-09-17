@@ -1,68 +1,126 @@
-import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import BrushDivider from "@/components/BrushDivider";
+import SwatchRibbon from "@/components/SwatchRibbon";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import { getLocalidadesPorFase } from "@/data/localidades";
 
 export default function HomePage() {
-  const fase1 = getLocalidadesPorFase(1);
-
   return (
     <>
       <Header />
 
       {/* Hero */}
-      <section className="pt-16">
-        <div className="max-w-[1120px] mx-auto px-6 grid md:grid-cols-[1.15fr_0.85fr] gap-12 items-center">
+      <section className="pt-8">
+        <div className="max-w-[1160px] mx-auto px-7 grid md:grid-cols-[1.05fr_0.95fr] gap-14 items-center">
           <div>
-            <h1 className="font-display font-medium text-[clamp(2.1rem,4.4vw,3.2rem)] leading-[1.08] max-w-[15ch] mb-5">
-              Pintores de confianza, cerca de tu casa
+            <p className="text-[0.85rem] text-inksoft mb-4">
+              Pintura residencial en Bogotá
+            </p>
+            <h1 className="font-display font-medium text-[clamp(2.1rem,4vw,3rem)] leading-[1.14] max-w-[16ch] mb-6">
+              Un pintor de confianza no debería ser un golpe de suerte
             </h1>
-            <p className="text-[1.08rem] text-inksoft max-w-[42ch] mb-7">
-              Encuentra un pintor disponible en tu localidad. Cotización
-              clara, para interiores y exteriores.
+            <p className="text-[1.08rem] text-inksoft max-w-[44ch] mb-8">
+              Gestionamos cada detalle de tu proyecto de pintura — de la
+              cotización por escrito a la entrega final — con un solo
+              responsable a cargo, de principio a fin.
             </p>
             <WhatsAppButton paginaOrigen="home-hero">
-              Cotizar por WhatsApp
+              Solicitar cotización
             </WhatsAppButton>
-            <p className="text-[0.85rem] text-inksoft mt-3.5">
-              Respuesta en minutos · Servicio en las 20 localidades de
-              Bogotá
+            <p className="text-[0.85rem] text-inksoft mt-4">
+              Cotización por escrito · Un responsable directo, no un
+              intermediario
             </p>
           </div>
 
-          <div className="relative aspect-square rounded-2xl overflow-hidden bg-panel border border-line shadow-[0_12px_30px_rgba(35,32,27,0.06)] flex items-center justify-center">
-            <svg viewBox="0 0 200 200" className="w-[78%] h-[78%]" aria-hidden="true">
-              <path
-                className="fill-ocre animate-hue motion-reduce:animate-none"
-                d="M20 60 Q 40 20, 90 30 T 180 50 Q 160 90, 110 80 T 30 100 Z"
-              />
-              <path
-                className="fill-rojo animate-hue motion-reduce:animate-none opacity-90"
-                style={{ animationDelay: "-3s" }}
-                d="M30 120 Q 60 90, 120 110 T 190 130 Q 150 170, 90 150 T 20 160 Z"
-              />
-              <path
-                className="fill-verde animate-hue motion-reduce:animate-none opacity-80"
-                style={{ animationDelay: "-6s" }}
-                d="M50 20 Q 90 50, 150 30 Q 170 60, 130 70 Q 90 40, 60 60 Z"
-              />
-            </svg>
+          <div className="relative aspect-[4/5] rounded overflow-hidden shadow-[0_24px_50px_rgba(32,31,27,0.14)] bg-[linear-gradient(160deg,#E4E0D5_0%,#D7D2C4_55%,#C9C3B2_100%)]">
+            <span className="absolute top-4 right-4 text-[0.72rem] italic text-ink/55 bg-white/70 px-2.5 py-1 rounded-sm">
+              Espacio para fotografía real
+            </span>
+            <div className="absolute bottom-6 left-6 right-6 flex gap-2.5">
+              <div className="flex-1 h-[54px] rounded-sm shadow-[0_8px_18px_rgba(32,31,27,0.18)] bg-musgo" />
+              <div className="flex-1 h-[54px] rounded-sm shadow-[0_8px_18px_rgba(32,31,27,0.18)] bg-laton" />
+              <div className="flex-1 h-[54px] rounded-sm shadow-[0_8px_18px_rgba(32,31,27,0.18)] bg-terracota" />
+              <div className="flex-1 h-[54px] rounded-sm shadow-[0_8px_18px_rgba(32,31,27,0.18)] bg-[#8B8878]" />
+            </div>
           </div>
         </div>
       </section>
 
-      <BrushDivider />
+      <SwatchRibbon />
+
+      {/* Por qué la informalidad sale más cara */}
+      <section className="pb-[70px]">
+        <div className="max-w-[1160px] mx-auto px-7">
+          <h2 className="font-display font-medium text-[1.8rem] mb-3.5">
+            Por qué la informalidad sale más cara
+          </h2>
+          <p className="text-inksoft max-w-[56ch] mb-10">
+            En pintura residencial, el problema casi nunca es encontrar a
+            alguien — es no saber con quién quedaste.
+          </p>
+          <div className="grid md:grid-cols-2 gap-5">
+            <div className="bg-card border border-line rounded-lg p-8 opacity-90">
+              <h3 className="font-display font-medium text-[1.15rem] mb-4">
+                Pintor por aviso clasificado
+              </h3>
+              <ul className="space-y-0 text-[0.95rem] text-inksoft">
+                {[
+                  "Precio de palabra, que cambia a mitad de obra",
+                  "Sin contrato ni cotización por escrito",
+                  "Nadie responde si algo queda mal",
+                  "No sabes quién entra a tu casa",
+                ].map((item, i) => (
+                  <li
+                    key={item}
+                    className={`flex gap-2.5 py-2.5 ${
+                      i > 0 ? "border-t border-line" : ""
+                    }`}
+                  >
+                    <span className="flex-none w-[18px] font-bold text-terracota">
+                      –
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-card border border-line rounded-lg p-8">
+              <h3 className="font-display font-medium text-[1.15rem] mb-4">
+                Pintores Bogotá
+              </h3>
+              <ul className="space-y-0 text-[0.95rem]">
+                {[
+                  "Cotización firmada, precio cerrado",
+                  "Un solo responsable durante todo el proyecto",
+                  "Garantía por escrito sobre el trabajo entregado",
+                  "Equipo verificado antes de entrar a tu propiedad",
+                ].map((item, i) => (
+                  <li
+                    key={item}
+                    className={`flex gap-2.5 py-2.5 ${
+                      i > 0 ? "border-t border-line" : ""
+                    }`}
+                  >
+                    <span className="flex-none w-[18px] font-bold text-musgo">
+                      ＋
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Antes / Después */}
-      <section className="pb-16">
-        <div className="max-w-[1120px] mx-auto px-6">
-          <h2 className="font-display font-medium text-[1.9rem] mb-2">
-            Mira la diferencia
+      <section className="pb-[70px]">
+        <div className="max-w-[1160px] mx-auto px-7">
+          <h2 className="font-display font-medium text-[1.8rem] mb-3.5">
+            El resultado, de un vistazo
           </h2>
-          <p className="text-inksoft max-w-[52ch] mb-8">
+          <p className="text-inksoft max-w-[56ch] mb-10">
             Desliza para comparar el antes y el después de un trabajo de
             pintura.
           </p>
@@ -73,87 +131,84 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Servicios */}
-      <section className="pb-16" id="servicios">
-        <div className="max-w-[1120px] mx-auto px-6">
-          <h2 className="font-display font-medium text-[1.9rem] mb-2">
-            Un pintor para cada trabajo
+      {/* Proceso */}
+      <section className="pb-[70px]" id="proceso">
+        <div className="max-w-[1160px] mx-auto px-7">
+          <h2 className="font-display font-medium text-[1.8rem] mb-3.5">
+            Cómo trabajamos
           </h2>
-          <p className="text-inksoft max-w-[52ch] mb-8">
-            Sea un cuarto, una fachada o un repintado completo, gestionamos
-            la cotización y te asignamos al pintor adecuado para tu zona.
+          <p className="text-inksoft max-w-[56ch] mb-10">
+            Tres pasos, sin sorpresas en el camino.
           </p>
-          <div className="grid md:grid-cols-3 gap-5">
-            <div className="bg-card border border-line rounded-xl p-6 shadow-[0_8px_20px_rgba(35,32,27,0.05)]">
-              <div className="w-[38px] h-[38px] rounded-lg bg-ocre mb-4" />
-              <h3 className="font-semibold mb-2">Interiores</h3>
-              <p className="text-inksoft text-[0.94rem]">
-                Cuartos, salas, cocinas y baños. Acabados mate, satinado o
-                vinilo tipo 1 y 2.
-              </p>
-            </div>
-            <div className="bg-card border border-line rounded-xl p-6 shadow-[0_8px_20px_rgba(35,32,27,0.05)]">
-              <div className="w-[38px] h-[38px] rounded-lg bg-rojo mb-4" />
-              <h3 className="font-semibold mb-2">Fachadas y exteriores</h3>
-              <p className="text-inksoft text-[0.94rem]">
-                Impermeabilización, estuco y pintura resistente al clima de
-                Bogotá.
-              </p>
-            </div>
-            <div className="bg-card border border-line rounded-xl p-6 shadow-[0_8px_20px_rgba(35,32,27,0.05)]">
-              <div className="w-[38px] h-[38px] rounded-lg bg-verde mb-4" />
-              <h3 className="font-semibold mb-2">Resanes y acabados</h3>
-              <p className="text-inksoft text-[0.94rem]">
-                Corrección de fisuras menores, humedad superficial y estuco
-                previo al pintado.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Localidades */}
-      <section className="pb-16" id="localidades">
-        <div className="max-w-[1120px] mx-auto px-6">
-          <h2 className="font-display font-medium text-[1.9rem] mb-2">
-            Cobertura por localidad
-          </h2>
-          <p className="text-inksoft max-w-[52ch] mb-8">
-            Empezamos por las zonas con más solicitudes; iremos activando el
-            resto progresivamente.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3.5">
-            {fase1.map((loc, i) => (
-              <Link
-                key={loc.slug}
-                href={`/pintores-a-domicilio-${loc.slug}`}
-                className="border border-line rounded-[10px] px-4 py-[18px] bg-card shadow-[0_6px_16px_rgba(35,32,27,0.05)] hover:-translate-y-0.5 transition"
-              >
-                <span className="font-display text-inksoft text-[0.85rem]">
-                  {String(i + 1).padStart(2, "0")}
+          <div className="grid md:grid-cols-3 gap-7">
+            {[
+              {
+                n: "01",
+                t: "Visita y cotización",
+                d: "Evaluamos el espacio y te entregamos una cotización cerrada por escrito, sin costos ocultos.",
+              },
+              {
+                n: "02",
+                t: "Ejecución supervisada",
+                d: "Un responsable directo coordina el trabajo de inicio a fin, con fechas confirmadas.",
+              },
+              {
+                n: "03",
+                t: "Entrega y garantía",
+                d: "Revisamos el resultado contigo antes de dar por cerrado el proyecto, con garantía por escrito.",
+              },
+            ].map((step) => (
+              <div key={step.n}>
+                <span className="font-display italic text-[1.6rem] text-laton mb-2.5 block">
+                  {step.n}
                 </span>
-                <h4 className="mt-1.5 mb-1 font-semibold">{loc.nombre}</h4>
-                <p className="text-[0.85rem] text-inksoft">
-                  Pintores disponibles
-                </p>
-              </Link>
+                <h3 className="font-semibold text-[1.05rem] mb-2">
+                  {step.t}
+                </h3>
+                <p className="text-inksoft text-[0.94rem]">{step.d}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Contacto */}
-      <section className="pb-[72px]" id="contacto">
-        <div className="max-w-[1120px] mx-auto px-6">
-          <div className="bg-card border border-line rounded-2xl p-8 md:p-12 grid md:grid-cols-[1.3fr_0.7fr] gap-8 items-center">
+      {/* Garantía */}
+      <section className="pb-[70px]">
+        <div className="max-w-[1160px] mx-auto px-7">
+          <div className="bg-ink text-bg rounded-lg p-8 md:p-11 grid md:grid-cols-[1.3fr_0.7fr] gap-8 items-center">
             <div>
-              <h3 className="font-display font-medium text-[1.6rem] mb-3">
-                Cuéntanos qué necesitas pintar
+              <h3 className="font-display font-medium text-[1.4rem] mb-3 text-white">
+                Garantía de satisfacción
+              </h3>
+              <p className="opacity-85 max-w-[42ch]">
+                Si algo no quedó como se acordó en la cotización, lo
+                corregimos sin costo adicional. Preferimos perder una tarde
+                a perder tu confianza.
+              </p>
+            </div>
+            <div>
+              <WhatsAppButton
+                paginaOrigen="home-garantia"
+                className="!bg-laton !shadow-[0_6px_18px_rgba(169,129,46,0.3)]"
+              >
+                Hablar con nosotros
+              </WhatsAppButton>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contacto */}
+      <section className="pb-20" id="contacto">
+        <div className="max-w-[1160px] mx-auto px-7">
+          <div className="bg-card border border-line rounded-lg p-8 md:p-11 grid md:grid-cols-[1.3fr_0.7fr] gap-8 items-center">
+            <div>
+              <h3 className="font-display font-medium text-[1.4rem] mb-2.5">
+                Cuéntanos sobre tu proyecto
               </h3>
               <p className="text-inksoft max-w-[40ch]">
-                Escríbenos por WhatsApp con tu localidad y el tipo de
-                trabajo. Te confirmamos disponibilidad y precio estimado el
-                mismo día.
+                Escríbenos por WhatsApp con tu zona y el tipo de espacio.
+                Te confirmamos una visita y cotización.
               </p>
             </div>
             <div>

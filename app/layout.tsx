@@ -25,11 +25,11 @@ export const metadata: Metadata = {
     template: "%s | Pintores Bogotá",
   },
   description:
-    "Encuentra un pintor disponible en tu localidad de Bogotá. Cotización clara para interiores y exteriores, con respuesta rápida por WhatsApp.",
+    "Pintura residencial en Bogotá con cotización por escrito, un responsable directo y garantía sobre el trabajo entregado.",
   openGraph: {
     title: "Pintores Bogotá",
     description:
-      "Pintores de confianza cerca de tu casa, en las localidades de Bogotá.",
+      "Un pintor de confianza no debería ser un golpe de suerte. Cotización por escrito y un responsable directo, de principio a fin.",
     url: siteUrl,
     siteName: "Pintores Bogotá",
     locale: "es_CO",
@@ -52,7 +52,7 @@ export default function RootLayout({
       name: "Bogotá",
     },
     description:
-      "Servicio de pintores a domicilio para interiores y exteriores en las localidades de Bogotá.",
+      "Servicio de pintura residencial en Bogotá, con cotización por escrito, un responsable directo y garantía sobre el trabajo entregado.",
   };
 
   return (

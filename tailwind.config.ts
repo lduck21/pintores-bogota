@@ -8,29 +8,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#FDFCFA",
+        bg: "#EFEDE7",
         card: "#FFFFFF",
-        panel: "#F7F4EE",
-        ink: "#23201B",
-        inksoft: "#6b655c",
-        ocre: "#D9A02C",
-        rojo: "#B8342B",
-        verde: "#1F5C52",
-        line: "rgba(35,32,27,0.08)",
+        panel: "#E4E0D5",
+        ink: "#201F1B",
+        inksoft: "#68655d",
+        musgo: "#3F4F3A",
+        laton: "#A9812E",
+        terracota: "#A9553F",
+        line: "rgba(32,31,27,0.10)",
       },
       fontFamily: {
         display: ["var(--font-fraunces)", "serif"],
         sans: ["var(--font-work-sans)", "sans-serif"],
       },
       keyframes: {
-        hue: {
-          "0%, 100%": { fill: "#D9A02C" },
-          "33%": { fill: "#B8342B" },
-          "66%": { fill: "#1F5C52" },
+        crossfade: {
+          "0%, 100%": { backgroundColor: "#3F4F3A" },
+          "50%": { backgroundColor: "#A9812E" },
         },
       },
       animation: {
-        hue: "hue 9s ease-in-out infinite",
+        crossfade: "crossfade 12s ease-in-out infinite",
       },
     },
   },
