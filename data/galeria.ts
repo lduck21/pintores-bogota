@@ -11,19 +11,19 @@ export interface ProyectoGaleria {
 export const galeria: ProyectoGaleria[] = [
   {
     id: "proyecto-1",
-    titulo: "",
+    titulo: "Sala principal",
     beforeSrc: "/images/galeria/proyecto-1-antes.jpg",
     afterSrc: "/images/galeria/proyecto-1-despues.jpg",
   },
   {
     id: "proyecto-2",
-    titulo: "",
+    titulo: "Fachada exterior",
     beforeSrc: "/images/galeria/proyecto-2-antes.jpg",
     afterSrc: "/images/galeria/proyecto-2-despues.jpg",
   },
   {
     id: "proyecto-3",
-    titulo: "",
+    titulo: "Habitación secundaria",
     beforeSrc: "/images/galeria/proyecto-3-antes.jpg",
     afterSrc: "/images/galeria/proyecto-3-despues.jpg",
   },
