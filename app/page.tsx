@@ -49,70 +49,53 @@ export default function HomePage() {
 
       <SwatchRibbon />
 
-      {/* Por qué la informalidad sale más cara */}
+      {/* Así medimos la calidad de un trabajo bien hecho */}
       <section className="pb-[70px]">
         <div className="max-w-[1160px] mx-auto px-7">
           <h2 className="font-display font-medium text-[1.8rem] mb-3.5">
-            Por qué la informalidad sale más cara
+            Así medimos la calidad de un trabajo bien hecho
           </h2>
           <p className="text-inksoft max-w-[56ch] mb-10">
-            En pintura residencial, el problema casi nunca es encontrar a
-            alguien — es no saber con quién quedaste.
+            Esto es lo que puedes esperar en cada proyecto, sin excepciones.
           </p>
           <div className="grid md:grid-cols-2 gap-5">
-            <div className="bg-card border border-line rounded-lg p-8 opacity-90">
-              <h3 className="font-display font-medium text-[1.15rem] mb-4">
-                Pintor por aviso clasificado
-              </h3>
-              <ul className="space-y-0 text-[0.95rem] text-inksoft">
-                {[
-                  "Precio de palabra, que cambia a mitad de obra",
-                  "Sin contrato ni cotización por escrito",
-                  "Nadie responde si algo queda mal",
-                  "No sabes quién entra a tu casa",
-                ].map((item, i) => (
-                  <li
-                    key={item}
-                    className={`flex gap-2.5 py-2.5 ${
-                      i > 0 ? "border-t border-line" : ""
-                    }`}
-                  >
-                    <span className="flex-none w-[18px] font-bold text-terracota">
-                      –
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-card border border-line rounded-lg p-8">
-              <h3 className="font-display font-medium text-[1.15rem] mb-4">
-                Pintores Bogotá
-              </h3>
-              <ul className="space-y-0 text-[0.95rem]">
-                {[
-                  "Cotización firmada, precio cerrado",
-                  "Un solo responsable durante todo el proyecto",
-                  "Garantía por escrito sobre el trabajo entregado",
-                  "Equipo verificado antes de entrar a tu propiedad",
-                ].map((item, i) => (
-                  <li
-                    key={item}
-                    className={`flex gap-2.5 py-2.5 ${
-                      i > 0 ? "border-t border-line" : ""
-                    }`}
-                  >
-                    <span className="flex-none w-[18px] font-bold text-musgo">
-                      ＋
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {[
+              {
+                t: "Cotización firmada, precio cerrado",
+                d: "Precio por escrito antes de empezar. Sin ajustes de última hora.",
+              },
+              {
+                t: "Un responsable, no una cuadrilla anónima",
+                d: "Alguien coordina tu proyecto de principio a fin, disponible si necesitas escribir.",
+              },
+              {
+                t: "Garantía por escrito",
+                d: "Si algo no quedó como se acordó, lo corregimos sin costo adicional.",
+              },
+              {
+                t: "Equipo verificado",
+                d: "Cada persona que entra a tu casa pasa por un proceso de verificación previo.",
+              },
+            ].map((item) => (
+              <div
+                key={item.t}
+                className="bg-card border border-line rounded-lg p-7 flex gap-4"
+              >
+                <span className="flex-none w-6 h-6 rounded-full bg-musgo/10 text-musgo font-bold flex items-center justify-center text-sm">
+                  ＋
+                </span>
+                <div>
+                  <h3 className="font-semibold text-[1.02rem] mb-1.5">
+                    {item.t}
+                  </h3>
+                  <p className="text-inksoft text-[0.94rem]">{item.d}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
+
 
       {/* Antes / Después */}
       <section className="pb-[70px]">
