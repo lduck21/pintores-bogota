@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* El sitio siempre usa el tema claro de marca, sin importar el modo
+   oscuro del sistema del visitante — ver decisión en el chat de diseño. */
+html {
+  color-scheme: light;
+}
+
+body {
+  background: theme("colors.bg");
+  color: theme("colors.ink");
+}
